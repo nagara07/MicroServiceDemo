@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/rest/hello")
+@RequestMapping("/rest")
 public class HelloController {
 	
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@GetMapping("/test/{username}")
+	@GetMapping("/hello/{username}")
 	public String sayHi(@PathVariable String username){
 		return restTemplate.getForObject("http://demo-server/rest/hello/test", String.class) + " "   +username;
 	} 
