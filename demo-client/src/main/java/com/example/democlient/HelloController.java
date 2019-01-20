@@ -15,8 +15,8 @@ public class HelloController {
 	private RestTemplate restTemplate;
 	
 	@GetMapping("/hello/{username}")
-	public String sayHi(@PathVariable String username){
-		return restTemplate.getForObject("http://demo-server/rest/hello/test", String.class) + " "   +username;
+	public String sayHello(@PathVariable String username){
+		return restTemplate.getForObject("http://demo-server/rest/greet", String.class) + " "   +username;
 	} 
 
 }
